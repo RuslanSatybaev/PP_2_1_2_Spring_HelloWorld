@@ -1,3 +1,4 @@
+import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
@@ -12,7 +13,7 @@ public class AppConfig {
         return helloWorld;
     }
 
-    @Scope("prototype")
+    @Scope(BeanDefinition.SCOPE_PROTOTYPE)
     @Bean(name = "cat")
     public Cat getCat() {
         Cat cat = new Cat();
